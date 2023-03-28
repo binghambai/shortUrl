@@ -1,6 +1,7 @@
 package main
 
 import (
+	"binghambai.com/shortUrl/middleware"
 	"binghambai.com/shortUrl/routers"
 	"context"
 	"github.com/gin-gonic/gin"
@@ -17,8 +18,11 @@ func main() {
 	//禁用日志颜色
 	//gin.DisableConsoleColor()
 
-	router := gin.Default()
+	//连接redis
+	middleware.InitRedis()
 
+	//注册所有路由
+	router := gin.Default()
 	routers.InitAllRouters(router)
 
 	initServer(router)
