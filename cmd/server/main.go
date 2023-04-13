@@ -1,8 +1,8 @@
 package main
 
 import (
-	"binghambai.com/shortUrl/middleware"
-	"binghambai.com/shortUrl/routers"
+	"binghambai.com/shortUrl/app/conn"
+	"binghambai.com/shortUrl/app/routers"
 	"context"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -19,7 +19,7 @@ func main() {
 	//gin.DisableConsoleColor()
 
 	//连接redis
-	middleware.InitRedis()
+	conn.InitConn()
 
 	//注册所有路由
 	router := gin.Default()

@@ -1,7 +1,7 @@
 package routers
 
 import (
-	service "binghambai.com/shortUrl/server"
+	service "binghambai.com/shortUrl/app/service"
 	"github.com/gin-gonic/gin"
 )
 
